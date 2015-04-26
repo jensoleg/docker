@@ -1,0 +1,25 @@
+# Start with: docker-compose up -d
+
+nginx:
+    image: jensoleg/nginx
+    links:
+        - tsapi:tsapi
+        - mqtt:mqtt
+    ports:
+        - "80:80"
+    volumes:
+        - /ecs/webroot:/usr/share/nginx/html:ro   
+tsapi:
+    image: jensoleg/tsapi
+    environment:
+        - APP = app.js
+    ports:
+        - "8081:8081"
+mqtt:
+    image: jensoleg/mqtt
+    environment:
+        - APP = app.js
+    ports:
+        - "8080:8080"
+        - "1883:1883"
+        - "8082:8082"    
