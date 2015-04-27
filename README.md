@@ -1,4 +1,4 @@
-# Docker compose workflow with Node app, MQTT and NGiNX
+# Docker compose workflow with Node app, MQTT and NGINX
 
 Run the command 
 

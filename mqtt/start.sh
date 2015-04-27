@@ -8,7 +8,7 @@ git clone https://github.com/jensoleg/mqtt.git
 
 cd ./mqtt
 
-npm install
+npm install --unsafe-perm --production
 
 if [ -z "$APP" ]; then
     export APP=app.js
