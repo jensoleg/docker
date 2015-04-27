@@ -20,6 +20,14 @@ Default mounted directory is:
 ```
 
 
-## NGINX server names
+### NGINX server names
 
 The nginx has hardcoded server names used in the current project setup. The host names can be changed but then you must change the nginx entry in the docker compose file to build the nginx docker image. Change "image: jensoleg/nginx" to "build: nginx". 
+
+### .. IOT platform api
+
+## Device ressources
+
+## Timeseries 
+
+## MQTT 
