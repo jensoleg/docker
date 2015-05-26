@@ -4,7 +4,8 @@
 The platform fully secures both users, api's and iot devices in a comprehensive security framework.
 
 The docker compose file "docker-compose" defines the docker container services needed to run the ... IOT platform. 
-[PM2](https://github.com/Unitech/pm2) will monitor the services and automaticakky restart the processes in case of a crash. 
+[PM2](https://github.com/Unitech/pm2) monitors the services and automaticakky restarts the processes in case of a crash.
+You can also control the server processes with PM2 
 
 ## Platform installation
 If you haven't installed Docker and Compose on the target machine follow these [instructions](https://docs.docker.com/compose/install/)
@@ -17,12 +18,20 @@ After this run the compose command in the docker library.
 docker-compose up -d
 ```
 
-The client web app is mounted on NGINX in the volume mapping in the Docker compose file. You can deploy your web app to this directory.
+Web app is served by nginx and static files aare mounted on the volume specified in the Docker compose volume mapping. You can deploy your web app to this directory.
 Default mounted directory is: 
 ```bash
 /ecs/webroot 
 ```
 
+### Monitoring services
+Application service is monitored by PM2 and can be shutdown and restarted with PM. Consult the PM2](https://github.com/Unitech/pm2) documentation for further information.
+
+Application logs is retrieved with this command:
+
+```bash  
+docker exec <container id> more /root/.pm2/logs/app-out-0.log
+```
 
 ### NGINX server names
 
