@@ -29,5 +29,5 @@ alarmrouter:
         - APP = app.js         
         - MQTT_USER_NAME = <username>
         - MQTT_PASSWORD = <password> 
-    ports:
-        - "1883:1883"    
+    links:
+        - mqtt    
