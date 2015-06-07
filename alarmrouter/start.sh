@@ -2,11 +2,11 @@ cd /tmp
 
 # try to remove the repo if it already exists
 
-rm -rf alarmrouter; true
+rm -rf MessageRouter; true
 
 git clone https://github.com/jensoleg/MessageRouter.git
 
-cd ./alarmrouter
+cd ./MessageRouter
 
 npm install --unsafe-perm --production
 
