@@ -7,6 +7,8 @@ MAINTAINER Jens-Ole Graulund <jensole@graulund.net>
 
 RUN npm install -g pm2@0.12.10
 
+EXPOSE 1883
+
 ADD start.sh /tmp/
 
 RUN chmod +x /tmp/start.sh
