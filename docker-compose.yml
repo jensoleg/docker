@@ -22,4 +22,10 @@ mqtt:
     ports:
         - "8080:8080"
         - "1883:1883"
-        - "8082:8082"    
+        - "8082:8082"  
+alarmrouter:
+    image: jensoleg/alarmrouter
+    environment:
+        - APP = app.js         
+        - MQTT_USER_NAME = <username>
+        - MQTT_PASSWORD = <password> 
