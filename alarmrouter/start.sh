@@ -14,4 +14,7 @@ if [ -z "$APP" ]; then
     export APP=app.js
 fi
 
+# wait on MOsca server startup
+sleep 120
+
 pm2 start -x $APP --no-daemon
