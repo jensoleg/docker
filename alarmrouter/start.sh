@@ -17,4 +17,4 @@ fi
 # wait on MOsca server startup
 sleep 120
 
-pm2 start -x $APP --no-daemon
+MQTT_USER_NAME=$MQTT_USER_NAME MQTT_PASSWORD=$MQTT_PASSWORD pm2 start -x $APP  --no-daemon
