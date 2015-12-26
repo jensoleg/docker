@@ -1,7 +1,7 @@
 # BUILD image: docker build -t jensoleg/alarmrouter .
 # RUN image  : docker run --name alarmrouter -e "APP=app.js" -d jensoleg/alarmrouter
 
-FROM node:0.10
+FROM node:0.10.41
 
 MAINTAINER Jens-Ole Graulund <jensole@graulund.net>
 
