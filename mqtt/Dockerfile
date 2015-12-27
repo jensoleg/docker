@@ -5,7 +5,7 @@ FROM node:0.10
 
 MAINTAINER Jens-Ole Graulund <jensole@graulund.net>
 
-RUN npm install -g pm2@0.12.10
+RUN npm install --unsafe-perm --production -g pm2@0.15.6
 
 EXPOSE 8080
 EXPOSE 1883
