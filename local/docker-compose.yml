@@ -1,0 +1,40 @@
+# Start with: docker-compose up -d
+
+nginx-local:
+    container_name: nginx-local
+    image: jensoleg/nginx-local
+    links:
+        - senodio-api
+        - mqtt-broker
+    ports:
+        - "80:80"
+        - "443:443"
+        - "8081:8081" 
+        - "8085:8085"     
+    volumes:
+        - ~/Documents/apps/boxapp/app:/usr/share/nginx/html:ro   
+event-router:
+    container_name: event-router
+    image: jensoleg/event-router
+    environment:
+        - APP=app.js         
+        - MQTT_USER_NAME=mqtt@senodio.com
+        - MQTT_PASSWORD=mqtt
+        - MQTT_BROKER_0D5EF74D_PORT_1883_TCP_ADDR=mqtt-broker
+        - MQTT_BROKER_0D5EF74D_PORT_1883_TCP_PORT=1883
+    links:
+        - mqtt-broker
+senodio-api:
+    container_name: senodio-api
+    image: jensoleg/senodio-api
+    environment:
+        - APP=app.js
+mqtt-broker:
+    container_name: mqtt-broker
+    image: jensoleg/mqtt-broker
+    environment:
+        - APP=app.js
+    ports:
+        - "8080:8080"
+        - "8082:8082"
+        - "1883:1883"
