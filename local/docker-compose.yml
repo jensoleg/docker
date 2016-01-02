@@ -18,8 +18,8 @@ event-router:
     image: jensoleg/event-router
     environment:
         - APP=app.js         
-        - MQTT_USER_NAME=mqtt@senodio.com
-        - MQTT_PASSWORD=mqtt
+        - MQTT_USER_NAME=
+        - MQTT_PASSWORD=
         - MQTT_BROKER_0D5EF74D_PORT_1883_TCP_ADDR=mqtt-broker
         - MQTT_BROKER_0D5EF74D_PORT_1883_TCP_PORT=1883
     links:
